@@ -1,103 +1,267 @@
 import Image from "next/image";
+import Link from "next/link";
+import ProjectCard from "@/components/ProjectCard";
+import TypewriterTitle from "@/components/TypewriterTitle";
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <main className="flex flex-col min-h-screen">
+      {/* Hero Section */}
+      <section className="bg-gradient-to-r from-primary to-primary-light text-black py-28 pt-36">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col md:flex-row items-center justify-between">
+            <div className="md:w-1/2 mb-10 md:mb-0 animate-slideInLeft">
+              <h1 className="text-5xl font-bold leading-tight mb-4 text-black">
+                Hi, I'm <span className="text-black">Arpit Ribadiya</span>
+              </h1>
+              <TypewriterTitle />
+              <p className="text-xl text-black mb-8 max-w-lg">
+                I build modern, responsive web applications with cutting-edge technologies
+                to create exceptional user experiences.
+              </p>
+              <div className="flex space-x-4">
+                <a
+                  href="#projects"
+                  className="bg-black text-white px-6 py-3 rounded-lg font-medium hover:bg-black/80 transition-all duration-300 transform hover:scale-105"
+                >
+                  View My Work
+                </a>
+                <a
+                  href="#contact"
+                  className="bg-transparent border-2 border-black text-black px-6 py-3 rounded-lg font-medium hover:bg-black hover:text-white transition-all duration-300 transform hover:scale-105"
+                >
+                  Contact Me
+                </a>
+              </div>
+            </div>
+            <div className="md:w-1/2 flex justify-center animate-slideInRight">
+              <div className="relative w-80 h-80 animate-float">
+                <div className="absolute w-64 h-64 bg-black/10 rounded-lg transform rotate-45 top-8 left-8"></div>
+                <div className="absolute w-64 h-64 bg-primary-dark rounded-lg transform rotate-12"></div>
+                <div className="absolute inset-0 flex items-center justify-center">
+                  <div className="w-48 h-48 bg-white rounded-lg shadow-xl flex items-center justify-center">
+                    <div className="text-5xl">
+                      <span className="text-primary-dark">{'<'}</span>
+                      <span className="text-black font-bold">AR</span>
+                      <span className="text-primary-dark">{'/>'}</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-white">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black relative tracking-widest uppercase font-serif">
+            ABOUT
+          </h2>
+          <div className="flex flex-col md:flex-row items-center">
+            <div className="md:w-1/2 mb-8 md:mb-0 animate-slideUp">
+              <h3 className="text-2xl font-semibold mb-4 text-black">Who I Am</h3>
+              <p className="text-black mb-4 leading-relaxed">
+                I'm a passionate React and Next.js developer with expertise in building 
+                modern web applications. I focus on creating clean, efficient, and 
+                maintainable code that delivers exceptional user experiences.
+              </p>
+              <p className="text-black mb-4 leading-relaxed">
+                With a strong foundation in JavaScript, TypeScript, and modern frontend 
+                frameworks, I enjoy solving complex problems and turning ideas into reality.
+              </p>
+              <div className="flex space-x-4 mt-6">
+                <div className="flex items-center">
+                  <div className="mr-2 text-black">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span className="text-black">3+ Years Experience</span>
+                </div>
+                <div className="flex items-center">
+                  <div className="mr-2 text-black">
+                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                      <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd"></path>
+                    </svg>
+                  </div>
+                  <span className="text-black">15+ Projects Completed</span>
+                </div>
+              </div>
+            </div>
+            <div className="md:w-1/2 md:pl-12">
+              <div className="grid grid-cols-2 gap-6">
+                {aboutCards.map((card, index) => (
+                  <div 
+                    key={card.title} 
+                    className="bg-bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover-lift"
+                    style={{ 
+                      animationName: 'fadeIn',
+                      animationDuration: '0.8s',
+                      animationFillMode: 'both',
+                      animationDelay: `${index * 150 + 300}ms`
+                    }}
+                  >
+                    <div className="mb-3 text-black">
+                      {card.icon}
+                    </div>
+                    <h4 className="text-lg font-medium mb-2 text-black">{card.title}</h4>
+                    <p className="text-black text-sm">{card.description}</p>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Skills Section */}
+      <section id="skills" className="py-20" style={{ backgroundColor: '#1f1f1f' }}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 relative tracking-widest uppercase font-serif" style={{ color: 'white' }}>
+            SKILLS
+          </h2>
+          <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-4 gap-6">
+            {skills.map((skill, index) => (
+              <div 
+                key={skill.name} 
+                className="p-6 rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col items-center hover-scale"
+                style={{ 
+                  backgroundColor: 'rgba(248,245,244,.05)',
+                  animationName: 'fadeIn',
+                  animationDuration: '0.8s',
+                  animationFillMode: 'both',
+                  animationDelay: `${index * 100}ms`
+                }}
+              >
+                <div className="text-5xl mb-4 text-white">{skill.icon}</div>
+                <h3 className="text-lg font-medium text-white mb-1" style={{ color: 'white' }}>{skill.name}</h3>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Projects Section */}
+      <section id="projects" className="py-20 bg-gradient-to-r from-primary to-primary-light">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <h2 className="text-3xl font-bold text-center mb-12 text-black relative tracking-widest uppercase font-serif">
+            PROJECTS
+          </h2>
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {projects.map((project, index) => (
+              <ProjectCard
+                key={project.title}
+                title={project.title}
+                description={project.description}
+                technologies={project.technologies}
+                demo={project.demo}
+                github={project.github}
+                index={index}
+              />
+            ))}
+          </div>
+        </div>
+      </section>
+    </main>
   );
 }
+
+// About cards data
+const aboutCards = [
+  {
+    title: "Frontend Development",
+    description: "Creating responsive and interactive user interfaces",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+      </svg>
+    )
+  },
+  {
+    title: "React & Next.js",
+    description: "Building modern web applications with React ecosystem",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path>
+      </svg>
+    )
+  },
+  {
+    title: "Responsive Design",
+    description: "Creating websites that work on all devices",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 18h.01M8 21h8a2 2 0 002-2V5a2 2 0 00-2-2H8a2 2 0 00-2 2v14a2 2 0 002 2z"></path>
+      </svg>
+    )
+  },
+  {
+    title: "Performance Optimization",
+    description: "Building fast and efficient web applications",
+    icon: (
+      <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
+      </svg>
+    )
+  }
+];
+
+// Sample data for skills
+const skills = [
+  { name: "React", icon: "⚛️" },
+  { name: "Next.js", icon: "▲" },
+  { name: "TypeScript", icon: "TS" },
+  { name: "JavaScript", icon: "JS" },
+  { name: "HTML5", icon: "🌐" },
+  { name: "CSS3", icon: "🎨" },
+  { name: "Tailwind CSS", icon: "🌊" },
+  { name: "Redux", icon: "🔄" },
+];
+
+// Sample data for projects
+const projects = [
+  {
+    title: "E-Commerce Platform",
+    description: "A full-featured online shopping platform with cart, checkout, and payment integration.",
+    technologies: ["React", "Next.js", "Tailwind CSS", "Stripe"],
+    demo: "https://example.com",
+    github: "https://github.com",
+  },
+  {
+    title: "Task Management App",
+    description: "A productivity application for managing tasks, projects, and team collaboration.",
+    technologies: ["React", "Redux", "Firebase", "Material UI"],
+    demo: "https://example.com",
+    github: "https://github.com",
+  },
+  {
+    title: "Weather Dashboard",
+    description: "Real-time weather information with forecast data and interactive maps.",
+    technologies: ["React", "OpenWeather API", "Chart.js", "Styled Components"],
+    demo: "https://example.com",
+    github: "https://github.com",
+  },
+  {
+    title: "Social Media Dashboard",
+    description: "Analytics dashboard for tracking social media performance across platforms.",
+    technologies: ["Next.js", "TypeScript", "Tailwind CSS", "Recharts"],
+    demo: "https://example.com",
+    github: "https://github.com",
+  },
+  {
+    title: "Recipe Finder",
+    description: "Search and discover recipes based on ingredients, dietary restrictions, and preferences.",
+    technologies: ["React", "Context API", "Spoonacular API", "CSS Modules"],
+    demo: "https://example.com",
+    github: "https://github.com",
+  },
+  {
+    title: "Portfolio Website",
+    description: "Personal portfolio website showcasing projects and skills.",
+    technologies: ["Next.js", "Tailwind CSS", "Framer Motion", "TypeScript"],
+    demo: "https://example.com",
+    github: "https://github.com",
+  },
+];
