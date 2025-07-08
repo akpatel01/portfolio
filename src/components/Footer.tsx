@@ -3,14 +3,14 @@ export default function Footer() {
     <footer className="text-white py-10" id="contact" style={{ backgroundColor: '#1f1f1f' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex flex-col md:flex-row justify-between items-center">
-          <div className="mb-6 md:mb-0 animate-slideInLeft">
-            <h2 className="text-2xl text-white" style={{ color: 'white' }}>Arpit Ribadiya</h2>
+          <div className="mb-8 md:mb-0 text-center md:text-left animate-slideInLeft">
+            <h2 className="text-xl sm:text-2xl text-white" style={{ color: 'white' }}>Arpit Ribadiya</h2>
             <p className="mt-2">React & Next.js Developer</p>
-            <p className="mt-1">© {new Date().getFullYear()} All rights reserved</p>
+            <p className="mt-1 text-sm sm:text-base">© {new Date().getFullYear()} All rights reserved</p>
           </div>
           
-          <div className="flex flex-col space-y-4 md:space-y-0 md:flex-row md:space-x-8 items-center animate-slideInRight">
-            <div className="flex space-x-4">
+          <div className="flex flex-col space-y-6 md:space-y-0 md:flex-row md:space-x-8 items-center animate-slideInRight">
+            <div className="flex space-x-6">
               <a href="mailto:arpit@example.com" className="text-white hover:text-white/80 transition-colors hover-lift">
                 <svg className="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
                   <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z" />
@@ -32,10 +32,10 @@ export default function Footer() {
                 </svg>
               </a>
             </div>
-            <div className="flex flex-col md:flex-row md:space-x-8">
-              <a href="#about" className="text-white hover:text-white/80 transition-colors hover-lift">ABOUT</a>
-              <a href="#projects" className="text-white hover:text-white/80 transition-colors hover-lift">PROJECTS</a>
-              <a href="#skills" className="text-white hover:text-white/80 transition-colors hover-lift">SKILLS</a>
+            <div className="flex flex-wrap justify-center gap-4 md:flex-row md:space-x-8">
+              <a href="#about" className="text-white hover:text-white/80 transition-colors hover-lift px-2">ABOUT</a>
+              <a href="#projects" className="text-white hover:text-white/80 transition-colors hover-lift px-2">PROJECTS</a>
+              <a href="#skills" className="text-white hover:text-white/80 transition-colors hover-lift px-2">SKILLS</a>
             </div>
           </div>
         </div>
