@@ -1,14 +1,37 @@
+"use client";
+
+import { useEffect, useState, useRef } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import ProjectCard from "@/components/ProjectCard";
 import TypewriterTitle from "@/components/TypewriterTitle";
+import useScrollAnimation from "@/utils/useScrollAnimation";
 
 export default function Home() {
+  const [scrollY, setScrollY] = useState(0);
+  const aboutSectionRef = useRef<HTMLElement>(null);
+  const aboutAnimation = useScrollAnimation({ startOffset: 100, endOffset: 500 });
+  const skillsAnimation = useScrollAnimation({ startOffset: 600, endOffset: 1000 });
+  const projectsAnimation = useScrollAnimation({ startOffset: 1100, endOffset: 1500 });
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+    
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
+  const scrollToAbout = () => {
+    aboutSectionRef.current?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
     <main className="flex flex-col min-h-screen">
-      {/* Hero Section */}
-      <section className="bg-gradient-to-r from-primary to-primary-light text-black py-28 pt-36">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      {/* Hero Section - Full Screen */}
+      <section id="hero" className="bg-gradient-to-r from-primary to-primary-light text-black h-screen flex items-center relative">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="md:w-1/2 mb-10 md:mb-0 animate-slideInLeft">
               <h1 className="text-5xl font-bold leading-tight mb-4 text-black">
@@ -50,11 +73,32 @@ export default function Home() {
               </div>
             </div>
           </div>
+          
+          {/* Scroll indicator */}
+          <button 
+            onClick={scrollToAbout}
+            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer"
+            aria-label="Scroll to About section"
+          >
+            <span className="text-black mb-2">Scroll Down</span>
+            <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+          </button>
         </div>
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
+      <section 
+        id="about" 
+        ref={aboutSectionRef}
+        className="py-20 bg-white"
+        style={{
+          opacity: aboutAnimation.opacity,
+          transform: aboutAnimation.transform,
+          transition: 'opacity 0.5s ease, transform 0.5s ease'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-black relative tracking-widest uppercase font-serif">
             ABOUT
@@ -117,7 +161,16 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section id="skills" className="py-20" style={{ backgroundColor: '#1f1f1f' }}>
+      <section 
+        id="skills" 
+        className="py-20" 
+        style={{ 
+          backgroundColor: '#1f1f1f',
+          opacity: skillsAnimation.opacity,
+          transform: skillsAnimation.transform,
+          transition: 'opacity 0.5s ease, transform 0.5s ease'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 relative tracking-widest uppercase font-serif" style={{ color: 'white' }}>
             SKILLS
@@ -144,7 +197,15 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section id="projects" className="py-20 bg-gradient-to-r from-primary to-primary-light">
+      <section 
+        id="projects" 
+        className="py-20 bg-gradient-to-r from-primary to-primary-light"
+        style={{
+          opacity: projectsAnimation.opacity,
+          transform: projectsAnimation.transform,
+          transition: 'opacity 0.5s ease, transform 0.5s ease'
+        }}
+      >
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-3xl font-bold text-center mb-12 text-black relative tracking-widest uppercase font-serif">
             PROJECTS
