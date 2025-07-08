@@ -8,7 +8,7 @@ interface ProjectCardProps {
   title: string;
   description: string;
   technologies: string[];
-  demo: string;
+  demo?: string;
   github: string;
   index: number;
 }
