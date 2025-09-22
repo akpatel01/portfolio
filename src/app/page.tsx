@@ -34,13 +34,40 @@ export default function Home() {
         <div className="max-w-7xl mx-auto w-full [@media(max-height:800px)]:mt-[100px]">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="w-full md:w-1/2 mb-16 md:mb-0 animate-slideInLeft">
+              <div className="inline-block px-4 py-1 rounded-full bg-black/10 text-black text-sm font-medium mb-4">
+                👋 Welcome to my portfolio
+              </div>
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-black">
-                Hi, I'm <span className="text-black">Arpit Ribadiya</span>
+                Hi, I'm <span className="text-black relative">
+                  Arpit Ribadiya
+                  <span className="absolute bottom-0 left-0 w-full h-2 bg-black/10 -z-10"></span>
+                </span>
               </h1>
               <TypewriterTitle />
-              <p className="text-lg sm:text-xl text-black mb-8 max-w-lg">
-                I build modern, responsive web applications with cutting-edge technologies
-                to create exceptional user experiences.
+              <p className="text-lg sm:text-xl text-black/90 mb-6 max-w-lg font-medium">
+                Crafting exceptional web experiences with React & Next.js
+              </p>
+              <div className="grid grid-cols-2 gap-4 mb-8 max-w-lg">
+                <div className="flex items-center space-x-2 bg-black/5 rounded-lg p-3 transition-all duration-300 hover:bg-black/10">
+                  <span className="text-2xl">⚛️</span>
+                  <div>
+                    <div className="font-medium">React Expert</div>
+                    <div className="text-sm text-black/70">3+ Years</div>
+                  </div>
+                </div>
+                <div className="flex items-center space-x-2 bg-black/5 rounded-lg p-3 transition-all duration-300 hover:bg-black/10">
+                  <span className="text-2xl">▲</span>
+                  <div>
+                    <div className="font-medium">Next.js Dev</div>
+                    <div className="text-sm text-black/70">Modern Stack</div>
+                  </div>
+                </div>
+              </div>
+              <p className="text-base text-black/80 mb-8 max-w-lg">
+                Specialized in building high-performance web applications with
+                <span className="font-semibold"> TypeScript</span>,
+                <span className="font-semibold"> Tailwind CSS</span>, and
+                <span className="font-semibold"> Redux</span>. Focused on clean code and optimal user experience.
               </p>
               <div className="flex flex-wrap gap-4">
                 <a
@@ -73,18 +100,6 @@ export default function Home() {
               </div>
             </div>
           </div>
-
-          {/* Scroll indicator */}
-          <button
-            onClick={scrollToAbout}
-            className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer"
-            aria-label="Scroll to About section"
-          >
-            <span className="text-black mb-2">Scroll Down</span>
-            <svg className="w-6 h-6 text-black" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
-          </button>
         </div>
       </section>
 
