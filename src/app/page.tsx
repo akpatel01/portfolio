@@ -18,7 +18,7 @@ export default function Home() {
     const handleScroll = () => {
       setScrollY(window.scrollY);
     };
-    
+
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -31,7 +31,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen">
       {/* Hero Section - Full Screen */}
       <section id="hero" className="bg-gradient-to-r from-primary to-primary-light text-black min-h-screen flex items-center relative px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto w-full">
+        <div className="max-w-7xl mx-auto w-full mt-16">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="w-full md:w-1/2 mb-16 md:mb-0 animate-slideInLeft">
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-black">
@@ -73,9 +73,9 @@ export default function Home() {
               </div>
             </div>
           </div>
-          
+
           {/* Scroll indicator */}
-          <button 
+          <button
             onClick={scrollToAbout}
             className="absolute bottom-8 left-1/2 transform -translate-x-1/2 flex flex-col items-center animate-bounce cursor-pointer"
             aria-label="Scroll to About section"
@@ -89,8 +89,8 @@ export default function Home() {
       </section>
 
       {/* About Section */}
-      <section 
-        id="about" 
+      <section
+        id="about"
         ref={aboutSectionRef}
         className="py-16 sm:py-20 bg-white"
         style={{
@@ -107,12 +107,12 @@ export default function Home() {
             <div className="w-full md:w-1/2 mb-10 md:mb-0 animate-slideUp">
               <h3 className="text-xl sm:text-2xl font-semibold mb-4 text-black">Who I Am</h3>
               <p className="text-black mb-4 leading-relaxed">
-                I'm a passionate React and Next.js developer with expertise in building 
-                modern web applications. I focus on creating clean, efficient, and 
+                I'm a passionate React and Next.js developer with expertise in building
+                modern web applications. I focus on creating clean, efficient, and
                 maintainable code that delivers exceptional user experiences.
               </p>
               <p className="text-black mb-4 leading-relaxed">
-                With a strong foundation in JavaScript, TypeScript, and modern frontend 
+                With a strong foundation in JavaScript, TypeScript, and modern frontend
                 frameworks, I enjoy solving complex problems and turning ideas into reality.
               </p>
               <div className="flex flex-col sm:flex-row sm:space-x-4 mt-6 space-y-2 sm:space-y-0">
@@ -137,10 +137,10 @@ export default function Home() {
             <div className="w-full md:w-1/2 md:pl-12">
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 sm:gap-6">
                 {aboutCards.map((card, index) => (
-                  <div 
-                    key={card.title} 
+                  <div
+                    key={card.title}
                     className="bg-bg-light p-6 rounded-lg shadow-md hover:shadow-lg transition-all duration-300 hover-lift"
-                    style={{ 
+                    style={{
                       animationName: 'fadeIn',
                       animationDuration: '0.8s',
                       animationFillMode: 'both',
@@ -161,10 +161,10 @@ export default function Home() {
       </section>
 
       {/* Skills Section */}
-      <section 
-        id="skills" 
-        className="py-16 sm:py-20" 
-        style={{ 
+      <section
+        id="skills"
+        className="py-16 sm:py-20"
+        style={{
           backgroundColor: '#1f1f1f',
           opacity: skillsAnimation.opacity,
           transform: skillsAnimation.transform,
@@ -177,10 +177,10 @@ export default function Home() {
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 gap-4 sm:gap-6">
             {skills.map((skill, index) => (
-              <div 
-                key={skill.name} 
+              <div
+                key={skill.name}
                 className="p-4 sm:p-6 rounded-lg border border-white/10 hover:border-white/30 transition-all duration-300 flex flex-col items-center hover-scale"
-                style={{ 
+                style={{
                   backgroundColor: 'rgba(248,245,244,.05)',
                   animationName: 'fadeIn',
                   animationDuration: '0.8s',
@@ -197,8 +197,8 @@ export default function Home() {
       </section>
 
       {/* Projects Section */}
-      <section 
-        id="projects" 
+      <section
+        id="projects"
         className="py-16 sm:py-20 bg-gradient-to-r from-primary to-primary-light"
         style={{
           opacity: projectsAnimation.opacity,
@@ -286,7 +286,7 @@ const projects = [
   {
     title: "Video Streaming Platform",
     description: "A full-featured online Streaming platform.",
-    technologies: ["React", "Tailwind CSS" ],
+    technologies: ["React", "Tailwind CSS"],
     demo: "https://akflix.vercel.app/",
     github: "https://github.com/akpatel01/akflix",
   },
