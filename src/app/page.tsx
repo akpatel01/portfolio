@@ -31,7 +31,7 @@ export default function Home() {
     <main className="flex flex-col min-h-screen">
       {/* Hero Section - Full Screen */}
       <section id="hero" className="bg-gradient-to-r from-primary to-primary-light text-black min-h-screen flex items-center relative px-4 sm:px-6">
-        <div className="max-w-7xl mx-auto w-full mt-16">
+        <div className="max-w-7xl mx-auto w-full [@media(max-height:800px)]:mt-[100px]">
           <div className="flex flex-col md:flex-row items-center justify-between">
             <div className="w-full md:w-1/2 mb-16 md:mb-0 animate-slideInLeft">
               <h1 className="text-4xl sm:text-5xl font-bold leading-tight mb-4 text-black">
