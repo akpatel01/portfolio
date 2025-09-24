@@ -306,10 +306,11 @@ const projects = [
     github: "https://github.com/akpatel01/akflix",
   },
   {
-    title: "Social Media Backend api",
-    description: "Collection of apis for social media app",
+    title: "Blogs Writing Platform",
+    description: "Create and List of different types of Blogs",
     technologies: ["nodejs", "express", "mongodb", "jwt"],
-    github: "https://github.com/akpatel01/socialmedia-backend",
+    demo: "https://blogspace-lime.vercel.app/",
+    github: "https://github.com/akpatel01/Blogspace",
   },
   {
     title: "Checkout Page Design",
